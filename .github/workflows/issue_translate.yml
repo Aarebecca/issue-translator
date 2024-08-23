@@ -21,6 +21,6 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AZURE_TRANSLATE_KEY: ${{ secrets.AZURE_TRANSLATE_KEY }}
-          AZURE_TRANSLATE_ENDPOINT: ${{ secrets.AZURE_TRANSLATE_ENDPOINT }}
-          AZURE_TRANSLATE_LOCATION: ${{ secrets.AZURE_TRANSLATE_LOCATION }}
+          AZURE_TRANSLATE_ENDPOINT: https://api.cognitive.microsofttranslator.com
+          AZURE_TRANSLATE_LOCATION: eastus
           AZURE_TRANSLATE_TARGET: 'en'
