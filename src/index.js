@@ -2,11 +2,12 @@ const core = require('@actions/core');
 const { Octokit } = require('@octokit/rest');
 const axios = require('axios');
 
-const token = process.env.GITHUB_TOKEN;
-const key = process.env.AZURE_TRANSLATE_KEY;
-const endpoint = process.env.AZURE_TRANSLATE_ENDPOINT;
-const location = process.env.AZURE_TRANSLATE_LOCATION;
-const to = process.env.AZURE_TRANSLATE_TARGET || 'en';
+const token = core.getInput('GITHUB_TOKEN');
+const key = core.getInput('AZURE_TRANSLATE_KEY');
+const endpoint = core.getInput('AZURE_TRANSLATE_ENDPOINT');
+const location = core.getInput('AZURE_TRANSLATE_LOCATION');
+const to = core.getInput('AZURE_TRANSLATE_TARGET') || 'en';
+
 const octokit = new Octokit({ auth: token });
 
 async function run() {

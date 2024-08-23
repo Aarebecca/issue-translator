@@ -4,7 +4,7 @@
   "description": "A Github action to auto translate issue title",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "esbuild src/index.js --bundle --minify --platform=node --outfile=dist/index.js"
+    "build": "esbuild src/index.js --bundle --minify --platform=node --outfile=dist/index.js --minify-identifiers=false --minify-syntax=false --minify-whitespace=false"
   },
   "repository": {
     "type": "git",
