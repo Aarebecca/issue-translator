@@ -1,0 +1,32 @@
+name: Auto Translate Issue Title
+description: Automatically translate issue title to English
+author: Aarebecca
+
+inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub Token'
+    required: true
+  AZURE_TRANSLATE_KEY:
+    description: 'Azure Translate Key'
+    required: true
+  AZURE_TRANSLATE_ENDPOINT:
+    description: 'Azure Translate Endpoint'
+    required: true
+  AZURE_TRANSLATE_LOCATION:
+    description: 'Azure Translate Location'
+    required: true
+  AZURE_TRANSLATE_TARGET:
+    description: 'Target Language'
+    required: false
+
+on:
+  issues:
+    types: [opened]
+
+runs:
+  using: 'node20',
+  main: 'dist/index.js'
+
+branding:
+  icon: 'globe'
+  color: 'blue'

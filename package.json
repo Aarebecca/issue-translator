@@ -1,0 +1,35 @@
+{
+  "name": "issue-translator",
+  "version": "1.0.0",
+  "description": "A Github action to auto translate issue title",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ./test/translate.js",
+    "build": "esbuild src/index.js --bundle --minify --platform=node --outfile=dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aarebecca/issue-translator.git"
+  },
+  "keywords": [
+    "github",
+    "issue",
+    "translator"
+  ],
+  "author": "Aarebecca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aarebecca/issue-translator/issues"
+  },
+  "homepage": "https://github.com/Aarebecca/issue-translator#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@octokit/rest": "^21.0.2",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "esbuild": "^0.23.1"
+  }
+}
