@@ -19,10 +19,6 @@ inputs:
     description: 'Target Language'
     required: false
 
-on:
-  issues:
-    types: [opened]
-
 runs:
   using: 'node20',
   main: 'dist/index.js'
