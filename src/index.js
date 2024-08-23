@@ -26,11 +26,20 @@ async function run() {
 
     const title = issue.data.title;
 
+    // Only translate Chinese text
+    if (!/[\u4e00-\u9fa5]/.test(title)) {
+      console.log(
+        'The title does not contain Chinese text, no need to translate'
+      );
+      return;
+    }
+
     let translatedTitle = title;
     try {
       translatedTitle = await translate(title);
     } catch (error) {
-      // do nothing
+      console.warn('Failed to translate the title:', error);
+      return;
     }
 
     await octokit.issues.update({

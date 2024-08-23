@@ -39479,10 +39479,18 @@ async function run() {
       issue_number: issueNumber
     });
     const title = issue.data.title;
+    if (!/[\u4e00-\u9fa5]/.test(title)) {
+      console.log(
+        "The title does not contain Chinese text, no need to translate"
+      );
+      return;
+    }
     let translatedTitle = title;
     try {
       translatedTitle = await translate(title);
     } catch (error) {
+      console.warn("Failed to translate the title:", error);
+      return;
     }
     await octokit.issues.update({
       owner,
