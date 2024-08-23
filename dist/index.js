@@ -39464,8 +39464,8 @@ var { Octokit: Octokit3 } = (init_dist_src5(), __toCommonJS(dist_src_exports));
 var axios = require_axios();
 var token = core.getInput("GITHUB_TOKEN");
 var key = core.getInput("AZURE_TRANSLATE_KEY");
-var endpoint2 = core.getInput("AZURE_TRANSLATE_ENDPOINT");
-var location = core.getInput("AZURE_TRANSLATE_LOCATION");
+var endpoint2 = core.getInput("AZURE_TRANSLATE_ENDPOINT") || "https://api.cognitive.microsofttranslator.com";
+var location = core.getInput("AZURE_TRANSLATE_LOCATION") || "eastus";
 var to = core.getInput("AZURE_TRANSLATE_TARGET") || "en";
 var octokit = new Octokit3({ auth: token });
 async function run() {

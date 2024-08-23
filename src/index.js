@@ -4,8 +4,10 @@ const axios = require('axios');
 
 const token = core.getInput('GITHUB_TOKEN');
 const key = core.getInput('AZURE_TRANSLATE_KEY');
-const endpoint = core.getInput('AZURE_TRANSLATE_ENDPOINT');
-const location = core.getInput('AZURE_TRANSLATE_LOCATION');
+const endpoint =
+  core.getInput('AZURE_TRANSLATE_ENDPOINT') ||
+  'https://api.cognitive.microsofttranslator.com';
+const location = core.getInput('AZURE_TRANSLATE_LOCATION') || 'eastus';
 const to = core.getInput('AZURE_TRANSLATE_TARGET') || 'en';
 
 const octokit = new Octokit({ auth: token });
